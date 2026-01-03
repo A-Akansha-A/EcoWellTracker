@@ -7,10 +7,26 @@
 </head>
 <body>
 
-  <h1>EcoWell Tracker 🌱</h1>
+  <h1>EcoWell Tracker</h1>
   <p>Track your wellbeing & eco habits daily.</p>
 
+  <hr />
+
+  <h2>Sign Up</h2>
+  <input id="signup-email" type="email" placeholder="Email" />
+  <input id="signup-password" type="password" placeholder="Password" />
+  <button onclick="signup()">Sign Up</button>
+
+  <h2>Login</h2>
+  <input id="login-email" type="email" placeholder="Email" />
+  <input id="login-password" type="password" placeholder="Password" />
+  <button onclick="login()">Login</button>
+
+  <h2>OR</h2>
+  <button onclick="googleLogin()">Continue with Google</button>
+
   <script type="module" src="../src/firebase.js"></script>
+  <script type="module" src="../src/auth.js"></script>
 
 </body>
 </html>
