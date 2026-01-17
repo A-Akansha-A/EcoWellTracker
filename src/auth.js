@@ -3,7 +3,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  signInWithPopup
+  signInWithPopup,
+  sendPasswordResetEmail
+
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 
 // SIGN UP
@@ -56,4 +58,23 @@ window.googleLogin = function () {
     .catch((error) => {
       alert(error.message);
     });
+  };
+  // FORGOT PASSWORD
+window.forgotPassword = function () {
+  const email = document.getElementById("login-email").value;
+
+  if (!email) {
+    alert("Please enter your email first");
+    return;
+  }
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Password reset email sent 📩");
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 };
+  
+
