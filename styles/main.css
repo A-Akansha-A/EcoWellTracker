@@ -1,0 +1,273 @@
+/* =======================
+   GLOBAL RESET
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* =======================
+   BODY & BACKGROUND
+======================= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f2e9, #f1f8f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =======================
+   PAGE CONTAINER
+======================= */
+.page {
+  width: 100%;
+  text-align: center;
+}
+
+/* =======================
+   BRAND
+======================= */
+.brand {
+  margin-bottom: 28px;
+}
+
+.brand .logo {
+  width: 48px;
+  margin-bottom: 10px;
+}
+
+.brand h1 {
+  font-size: 28px;
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+.brand p {
+  font-size: 14px;
+  color: #6b8f71;
+}
+
+/* =======================
+   CARD
+======================= */
+.card {
+  background: #fff;
+  max-width: 420px;
+  width: 100%;
+  margin: auto;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+/* =======================
+   HEADINGS
+======================= */
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #1b1b1b;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 22px;
+}
+
+/* =======================
+   FORM
+======================= */
+label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 16px;
+  background: #f9fafb;
+}
+
+input:focus {
+  outline: none;
+  background: #fff;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.18);
+}
+
+/* =======================
+   FORGOT PASSWORD
+======================= */
+.forgot {
+  text-align: right;
+  margin-bottom: 18px;
+}
+
+.forgot a {
+  font-size: 13px;
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   PRIMARY BUTTON
+======================= */
+.primary-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =======================
+   DIVIDER
+======================= */
+.divider {
+  margin: 22px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: #e0e0e0;
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* =======================
+   GOOGLE BUTTON
+======================= */
+.google-btn {
+  width: 100%;
+  padding: 11px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* =======================
+   SIGNUP LINK
+======================= */
+.signup-text {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-text a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 480px) {
+  .card {
+    padding: 26px 20px;
+    margin: 0 16px;
+  }
+
+  .brand h1 {
+    font-size: 24px;
+  }
+}
+
+/* =======================
+   SIGN UP PAGE (EXTRA)
+======================= */
+
+/* Signup icon (top circle) */
+.signup-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 14px;
+}
+
+/* Terms & conditions */
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.terms input {
+  margin-top: 3px;
+}
+
+.terms a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Signup button variation (optional) */
+.signup-btn {
+  background: linear-gradient(135deg, #43a047, #1b5e20);
+}
