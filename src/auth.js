@@ -19,7 +19,7 @@ window.signup = function () {
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Signup successful 🎉");
-      window.location.href = "dashboard.html";
+      window.location.href = "onboarding.html";
     })
     .catch((error) => {
       alert(error.message);

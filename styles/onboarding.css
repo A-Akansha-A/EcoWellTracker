@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4fdf6;
+}
+
+.onboarding {
+  max-width: 420px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.progress {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 25%;
+  background: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.step {
+  display: none;
+  text-align: center;
+}
+
+.step.active {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+p {
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.permission {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 14px;
+  border-radius: 16px;
+  margin: 12px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-size: 16px;
+}
+
+button.primary {
+  background: #4CAF50;
+  color: white;
+}
+
+button:not(.primary) {
+  background: #e8f5e9;
+  color: #2e7d32;
+}

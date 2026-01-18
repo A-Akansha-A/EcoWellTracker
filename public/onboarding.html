@@ -1,0 +1,105 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome | EcoWell Tracker</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body>
+
+  <div class="page">
+    <div class="brand">
+      <h1>Welcome 🌱</h1>
+      <p>Let’s personalize your EcoWell journey</p>
+    </div>
+
+    <div class="card">
+      <h2>Set your daily goals</h2>
+      <p class="subtitle">You can change these anytime</p>
+
+      <label for="name">Your Name (optional)</label>
+      <input type="text" id="name" placeholder="e.g. Alex" />
+
+      <label for="water">Daily Water Goal (glasses)</label>
+      <input type="number" id="water" value="8" min="1" />
+
+      <label for="steps">Daily Step Goal</label>
+      <input type="number" id="steps" value="3000" min="500" />
+
+      <button class="primary-btn" onclick="saveOnboarding()">
+        Continue
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="../src/onboarding.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding</title>
+  <link rel="stylesheet" href="../styles/onboarding.css" />
+</head>
+<body>
+
+  <div class="onboarding">
+
+    <!-- Progress -->
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step active">
+      <h1>Welcome 🌱</h1>
+      <p>Build healthy habits and track your wellness every day.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+    <h1>Your Goals</h1>
+    <input id="name" type="text" placeholder="Your name" />
+    <input id="water" type="number" placeholder="Daily water goal (glasses)" />
+    <input id="steps" type="number" placeholder="Daily step goal" />
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <h1>Permissions</h1>
+      <div class="permission">
+        <p>🏃 Activity Tracking</p>
+        <button>Allow</button>
+      </div>
+      <div class="permission">
+        <p>🔔 Notifications</p>
+        <button>Allow</button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <h1>You're All Set 🎉</h1>
+      <p>Your wellness journey starts now.</p>
+      <button id="finishBtn" class="primary" type="button">
+      Go to Dashboard
+      </button>
+      
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prevBtn">Back</button>
+      <button id="nextBtn" class="primary">Next</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="../src/onboarding.js"></script>
+</body>
+</html>
+
