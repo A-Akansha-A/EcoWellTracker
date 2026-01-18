@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>EcoWell Tracker | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
 
@@ -17,42 +19,51 @@
 
     <!-- LOGIN CARD -->
     <div class="card">
+
       <h2>Sign In</h2>
       <p class="subtitle">Welcome back! Please login to continue</p>
 
+      <!-- EMAIL -->
       <label>Email</label>
-      <input
-        id="login-email"
-        type="email"
-        placeholder="Enter your email"
-      />
+      <div class="input-group">
+        <input id="login-email" type="email" placeholder="Enter your email" />
+      </div>
 
+      <!-- PASSWORD -->
       <label>Password</label>
-      <input
-        id="login-password"
-        type="password"
-        placeholder="Enter your password"
-      />
+      <div class="input-group">
+        <input id="login-password" type="password" placeholder="Enter your password" />
+      </div>
 
+      <!-- FORGOT -->
       <div class="forgot">
         <a href="#" onclick="forgotPassword()">Forgot Password?</a>
       </div>
 
+      <!-- LOGIN BUTTON -->
       <button class="primary-btn" onclick="login()">
         Sign In
       </button>
 
+      <!-- SWITCH -->
+      <div class="signup-text">
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+      </div>
+
+      <!-- DIVIDER -->
       <div class="divider">OR</div>
 
+      <!-- GOOGLE -->
       <button class="google-btn" onclick="googleLogin()">
-        Continue with Google
+        <img src="./images/google.jpg" alt="Google"> Continue with Google
       </button>
     </div>
-
   </div>
 
-  <!-- 🔥 DO NOT TOUCH (Firebase connected here) -->
+  <!-- DO NOT TOUCH (Firebase connected here) -->
   <script type="module" src="../src/firebase.js"></script>
   <script type="module" src="../src/auth.js"></script>
 </body>
+
 </html>

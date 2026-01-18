@@ -4,9 +4,15 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  onAuthStateChanged,
 
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+//auto Login Cheak
+//onAuthStateChanged(auth, (user) => {
+ // if (user) {
+  //  window.location.href = "dashboard.html";
+ // } });
 
 // SIGN UP
 window.signup = function () {
@@ -76,5 +82,11 @@ window.forgotPassword = function () {
       alert(error.message);
     });
 };
-  
+const toggle = document.querySelector('.toggle-password');
+const password = document.querySelector('input[type="password"]');
+
+toggle.addEventListener('click', () => {
+    password.type = password.type === "password" ? "text" : "password";
+});
+
 
