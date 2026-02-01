@@ -1,12 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard</title>
+  <meta charset="UTF-8" />
+  <title>EcoWell Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/dashboard.css">
 </head>
-<body>
 
-  <h1>Welcome to EcoWell Tracker 🌱</h1>
-  <p>Dashboard coming soon...</p>
+<body>
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">EcoWell Tracker 🌱</h2>
+    <nav>
+      <a class="active">📊 Dashboard</a>
+      <a>📈 Stats</a>
+      <a>📅 Calendar</a>
+      <a>👤 Profile</a>
+      <a>⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP HEADER -->
+    <div class="topHeader">
+      <h3 id="timeGreeting"></h3>
+      <p id="fullDate"></p>
+    </div>
+
+    <!-- GREEN WELCOME -->
+    <section class="welcome">
+      <h2 id="welcomeUser"></h2>
+      <p id="quote"></p>
+    </section>
+
+    <!-- DASHBOARD CARDS -->
+    <section class="grid">
+
+      <!-- WATER -->
+      <div class="card">
+        <span class="smallLabel">Hydration</span>
+        <h4>💧 Water Intake</h4>
+
+        <div class="waterCircle">
+  <svg width="100" height="100" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" class="bg"></circle>
+    <circle cx="50" cy="50" r="40" id="waterStroke"></circle>
+  </svg>
+  <div id="waterText">0 / 8 glasses</div>
+</div>
+
+
+        <button class="waterBtn" onclick="addWater()">+ Add Water</button>
+
+      </div>
+      
+
+
+
+      <!-- STEPS -->
+      <div class="card">
+        <span class="smallLabel">Activity</span>
+        <h4>🚶 Steps</h4>
+
+        <select id="goalSelect" onchange="setGoal()">
+          <option value="5000">5,000 steps</option>
+          <option value="10000">10,000 steps</option>
+          <option value="15000">15,000 steps</option>
+          <option value="custom">Custom</option>
+        </select>
+
+        <input id="customGoal" placeholder="Enter custom goal" style="display:none">
+
+        <input id="stepsInput" placeholder="Enter steps walked">
+        <p id="stepsInfo">0% complete</p>
+        <button onclick="addSteps()">Add Steps</button>
+      </div>
+
+      <!-- MOOD -->
+      <div class="card">
+        <span class="smallLabel">Wellbeing</span>
+        <h4>Mood Tracker</h4>
+
+        <div class="bigEmoji" id="mainEmoji">🙂</div>
+        <p class="subText">How are you feeling today?</p>
+
+        <div class="moods">
+          <div class="mood" onclick="setMood(this,'😁')">😁 Great</div>
+          <div class="mood" onclick="setMood(this,'🙂')">🙂 Good</div>
+          <div class="mood" onclick="setMood(this,'😐')">😐 Okay</div>
+          <div class="mood" onclick="setMood(this,'😔')">😔 Low</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TASKS -->
+    <section class="card tasks">
+      <span class="smallLabel">Tasks</span>
+      <input id="taskInput" placeholder="Add a new task">
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList" class="taskList"></ul>
+      
+
+
+    </section>
+
+    <!-- SUMMARY -->
+    <span class="sectionLabel">Summary</span>
+    <section class="summaryGrid">
+
+      <div class="card soft">
+        <h4>Daily Wellbeing Score</h4>
+        <h1><span id="score">0</span> <small>/ 100</small></h1>
+      </div>
+
+      <div class="card">
+        <h4>Eco Habits</h4>
+        <p id="ecoText">0 completed</p>
+      </div>
+
+      <div class="card soft">
+        <h4>Today's Highlights</h4>
+        <p>💧 Hydration — <span id="hydroPercent">0%</span></p>
+        <p>🌱 Eco Impact — <span id="ecoActions">0 actions</span></p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../src/dashboard.js"></script>
+
 
 </body>
 </html>

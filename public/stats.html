@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistics & Insights</title>
+  <link rel="stylesheet" href="../styles/stats.css">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <h2 class="logo">EcoWell Tracker 🌱</h2>
+    <nav>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="stats.html" class="active">📈 Stats</a>
+      <a href="#">📅 Calendar</a>
+      <a href="#">👤 Profile</a>
+      <a href="#">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <!-- EXISTING STATS CONTENT YAHAN RAHEGA -->
+
+<h1>Statistics & Insights</h1>
+<p>Track your progress and trends over time</p>
+
+<div class="statsGrid">
+  <div class="box">💧 Avg Water: <span id="avgWater">0</span></div>
+  <div class="box">🚶 Avg Steps: <span id="avgSteps">0</span></div>
+  <div class="box">🙂 Avg Mood Score: <span id="avgMood">0</span></div>
+  <div class="box">🌱 Eco Habits: <span id="avgEco">0</span></div>
+</div>
+
+<h3>Weekly Water Intake</h3>
+<canvas id="waterChart"></canvas>
+
+<h3>Weekly Steps</h3>
+<canvas id="stepsChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../src/stats.js"></script>
+
+</body>
+</html>
