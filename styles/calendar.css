@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #F4F8F5;
+  padding-bottom: 60px; /* space for bottom nav */
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-header button {
+  padding: 6px 12px;
+  font-size: 18px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calendar-header h2 {
+  margin: 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day-name {
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.days div {
+  background: white;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.days div:hover {
+  background: #d1f1e7;
+}
+
+.day-detail {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.day-detail.hidden { display: none; }
+
+#closeDetail {
+  background: none;
+  border: none;
+  font-size: 18px;
+  float: right;
+  cursor: pointer;
+  color: #888;
+}
+
+/* bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.bottom-nav a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}

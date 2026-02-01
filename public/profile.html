@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | EcoWell Tracker</title>
+  <link rel="stylesheet" href="../styles/profile.css" />
+</head>
+<body>
+
+  <main class="profile">
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+      <div class="profile-info">
+        <h1 id="userName">User</h1>
+        <p id="memberSince"></p>
+        <span class="streak" id="streak">🔥 0-day streak</span>
+      </div>
+    </section>
+
+    <!-- Stats Snapshot -->
+    <section class="stats">
+      <div class="stat-card">
+        <span>🔥</span>
+        <strong id="streakStat">0 days</strong>
+        <p>Streak</p>
+      </div>
+      <div class="stat-card">
+        <span>💧</span>
+        <strong id="waterStat">0%</strong>
+        <p>Water Consistency</p>
+      </div>
+      <div class="stat-card">
+        <span>👟</span>
+        <strong id="stepsStat">0</strong>
+        <p>Steps</p>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="section">
+      <h2>Your Daily Goals</h2>
+
+      <div class="card">
+        <div>
+          <span>💧</span>
+          <strong>Water Goal</strong>
+          <p id="waterGoal">0 glasses</p>
+        </div>
+        <button onclick="editWater()">Edit</button>
+      </div>
+
+      <div class="card">
+        <div>
+          <span>👟</span>
+          <strong>Step Goal</strong>
+          <p id="stepGoal">0 steps</p>
+        </div>
+        <button onclick="editSteps()">Edit</button>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section class="section">
+      <h2>Settings</h2>
+
+      <div class="setting">
+        <span>Daily Reminders</span>
+        <input type="checkbox" id="remindersToggle" />
+      </div>
+
+      <div class="setting">
+        <span>Dark Mode</span>
+        <input type="checkbox" id="themeToggle" />
+      </div>
+    </section>
+
+    <!-- Logout -->
+    <button class="logout" onclick="logout()">Log out</button>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+  <button class="active" onclick="goPage('dashboard.html')">
+    <span>🏠</span>
+    Dashboard
+  </button>
+  <button onclick="goPage('calendar.html')">
+    <span>📊</span>
+    Calendar
+  </button>
+  <button onclick="goPage('profile.html')">
+    <span>👤</span>
+    Profile
+  </button>
+</nav>
+
+
+  <script type="module" src="../src/firebase.js"></script>
+  <script type="module" src="../src/profile.js"></script>
+  <script>
+    function goPage(page){ window.location.href = page; }
+
+    function editWater() {
+      let value = prompt("Enter new daily water goal (glasses):", waterGoal.textContent.replace(" glasses",""));
+      if(value) {
+        waterGoal.textContent = value + " glasses";
+        saveGoal("waterGoal", Number(value));
+      }
+    }
+
+    function editSteps() {
+      let value = prompt("Enter new daily step goal:", stepGoal.textContent.replace(" steps",""));
+      if(value) {
+        stepGoal.textContent = value + " steps";
+        saveGoal("stepGoal", Number(value));
+      }
+    }
+
+    async function saveGoal(field, value) {
+      const { db, auth } = await import("./firebase.js");
+      import("https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js").then(({ doc, updateDoc }) => {
+        updateDoc(doc(db, "users", auth.currentUser.uid), { [field]: value });
+      });
+    }
+
+    async function logout() {
+      const { auth } = await import("./firebase.js");
+      import("https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js").then(({ signOut }) => {
+        signOut(auth).then(()=> window.location.href="index.html");
+      });
+    }
+  </script>
+
+</body>
+</html>

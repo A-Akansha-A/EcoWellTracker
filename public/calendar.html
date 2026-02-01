@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar | EcoWell Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../styles/calendar.css">
+  <link rel="stylesheet" href="../styles/bottom-nav.css">
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+
+<main class="calendar-wrapper">
+
+  <!-- Calendar Header -->
+  <header class="calendar-header">
+    <span id="prev" class="material-symbols-rounded icon">chevron_left</span>
+    <h2 class="current-date">January 2026</h2>
+    <span id="next" class="material-symbols-rounded icon">chevron_right</span>
+  </header>
+
+  <!-- Calendar Grid -->
+  <div class="calendar">
+    <ul class="weeks">
+      <li>Sun</li>
+      <li>Mon</li>
+      <li>Tue</li>
+      <li>Wed</li>
+      <li>Thu</li>
+      <li>Fri</li>
+      <li>Sat</li>
+    </ul>
+    <ul class="days"></ul>
+  </div>
+
+  <!-- Day Detail Modal -->
+  <div id="dayDetail" class="day-detail hidden">
+    <button id="closeDetail">✖</button>
+    <h3 id="detailDate">Jan 1, 2026</h3>
+    <p><strong>Water:</strong> <span id="detailWater">0/8 glasses</span></p>
+    <p><strong>Steps:</strong> <span id="detailSteps">0</span></p>
+    <p><strong>Mood:</strong> <span id="detailMood">–</span></p>
+    <p><strong>Note:</strong> <span id="detailNote">–</span></p>
+  </div>
+
+</main>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="dashboard.html">🏠 Dashboard</a>
+  <a href="calendar.html" class="active">📅 Calendar</a>
+  <a href="profile.html">👤 Profile</a>
+</nav>
+
+<script type="module" src="../src/calendar.js"></script>
+</body>
+</html>
